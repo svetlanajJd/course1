@@ -1,3 +1,5 @@
+package course_project1;
+
 public class Employee {
     private static int id;
     private final int counter;
@@ -10,16 +12,23 @@ public class Employee {
 
 
     public Employee(String name, String lastName, String middleName, int department, float salary) {
-
         this.name = name;
         this.lastName = lastName;
         this.middleName = middleName;
-        this.department = department;
         this.salary = salary;
         this.counter = getId();
         id++;
+        if (department >= 1 && department <= 5) {
+            this.department = department;
+        } else {
+            throw new RuntimeException("ошибка!отделы могут быть только 1-5");
+        }
     }
 
+
+    private int getId() {
+        return id;
+    }
     public String getName() {
         return this.name;
     }
@@ -52,7 +61,4 @@ public class Employee {
         return counter;
     }
 
-    private int getId() {
-        return id;
     }
-}
