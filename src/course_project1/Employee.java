@@ -25,6 +25,10 @@ public class Employee {
         }
     }
 
+
+    private int getId() {
+        return id;
+    }
     public String getName() {
         return this.name;
     }
@@ -57,7 +61,4 @@ public class Employee {
         return counter;
     }
 
-    private int getId() {
-        return id;
     }
-}
